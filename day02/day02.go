@@ -15,10 +15,10 @@ import (
 // }
 
 func main() {
-	fmt.Println("Day1")
+	fmt.Println("Day2")
 
 	var fileName string
-	flag.StringVar(&fileName, "input", "inputs/day01", "Filename to read")
+	flag.StringVar(&fileName, "input", "inputs/day02", "Filename to read")
 	flag.Parse()
 
 	bytes, err := ioutil.ReadFile(fileName)
