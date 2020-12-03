@@ -42,18 +42,18 @@ func partA(lines []string) {
 }
 
 func partB(lines []string) {
-	part1Numbers := map[int]int{}
+	part1Numbers := map[int]struct{}{}
 	part2Numbers := map[int]int{}
 	for _, line := range lines {
 		num, err := strconv.Atoi(line)
 		if err != nil {
 			panic(err)
 		}
-		part1Numbers[num] = num
+		part1Numbers[num] = struct{}{}
 		possibleNum := 2020 - num
 		part2Numbers[possibleNum] = num
 
-		for _, part1 := range part1Numbers {
+		for part1 := range part1Numbers {
 			toFind := part1 + num
 			if val, ok := part2Numbers[toFind]; ok {
 				fmt.Println("Part B", num*part1*val)
